@@ -204,7 +204,7 @@
                     </button>
 
                     <button class="formbold-btn">
-                        Next Step
+                        <span id="next_btn">Next Step</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1675_1807)">
@@ -452,6 +452,7 @@
         const stepSix = document.querySelector('.formbold-form-step-6')
 
         const formSubmitBtn = document.querySelector('.formbold-btn')
+        const next_btn = document.querySelector('#next_btn')
         const formBackBtn = document.querySelector('.formbold-back-btn')
 
         formBackBtn.addEventListener("click", function(event) {
@@ -482,6 +483,7 @@
                 stepMenuSix.classList.remove('active')
                 stepFive.classList.add('active')
                 stepSix.classList.remove('active')
+                next_btn.textContent = 'Next Step'
             }
         })
 
@@ -519,7 +521,7 @@
                 stepMenuSix.classList.add('active')
                 stepFive.classList.remove('active')
                 stepSix.classList.add('active')
-                formSubmitBtn.textContent = 'Submit'
+                next_btn.textContent = 'Submit'
             } else if (stepMenuSix.className == 'formbold-step-menu6 active') {
                 document.querySelector('form').submit()
             }
