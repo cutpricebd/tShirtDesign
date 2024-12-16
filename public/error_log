@@ -1,0 +1,18 @@
+[09-May-2024 12:00:00 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:00 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/eoms/teddybearbd.com/public/../vendor/autoload.php' (include_path='.:/usr/local/apps/php82/lib/php') in /home/eoms/teddybearbd.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:03 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:03 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/eoms/teddybearbd.com/public/../vendor/autoload.php' (include_path='.:/usr/local/apps/php82/lib/php') in /home/eoms/teddybearbd.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:23 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:23 UTC] PHP Warning:  require(/home/eoms/teddybearbd.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/eoms/teddybearbd.com/public/index.php on line 34
+[09-May-2024 12:00:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/eoms/teddybearbd.com/public/../vendor/autoload.php' (include_path='.:/usr/local/apps/php82/lib/php') in /home/eoms/teddybearbd.com/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/eoms/teddybearbd.com/public/index.php on line 34

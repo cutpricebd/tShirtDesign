@@ -1,0 +1,1 @@
+<option value="">Select Province</option>{!! (isset($any) && $any) ? '<option value="Any">Any</option>' : '' !!}@foreach (Info::provinces() as $province)<option value="{{$province}}">{{$province}}</option>@endforeach
