@@ -10,23 +10,33 @@
 
 @section('master')
     <div class="formbold-main-wrapper">
-        <!-- Author: FormBold Team -->
-        <!-- Learn More: https://formbold.com -->
         <div class="formbold-form-wrapper">
             <form action="https://formbold.com/s/FORM_ID" method="POST">
                 <div class="formbold-steps">
                     <ul>
                         <li class="formbold-step-menu1 active">
                             <span>1</span>
-                            Sign Up
+                            Type of Artwork
                         </li>
                         <li class="formbold-step-menu2">
                             <span>2</span>
-                            Message
+                            Size
                         </li>
                         <li class="formbold-step-menu3">
                             <span>3</span>
-                            Confirm
+                            Frame
+                        </li>
+                        <li class="formbold-step-menu4">
+                            <span>4</span>
+                            Text
+                        </li>
+                        <li class="formbold-step-menu5">
+                            <span>5</span>
+                            Illustration
+                        </li>
+                        <li class="formbold-step-menu6">
+                            <span>6</span>
+                            Preview Design
                         </li>
                     </ul>
                 </div>
@@ -34,44 +44,115 @@
                 <div class="formbold-form-step-1 active">
                     <div class="formbold-input-flex">
                         <div>
-                            <label for="firstname" class="formbold-form-label"> First name </label>
-                            <input type="text" name="firstname" placeholder="Andrio" id="firstname"
-                                class="formbold-form-input" />
+                            <label for="firstname" class="formbold-form-label">Frame</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
                         </div>
                         <div>
-                            <label for="lastname" class="formbold-form-label"> Last name </label>
-                            <input type="text" name="lastname" placeholder="Dolee" id="lastname"
-                                class="formbold-form-input" />
+                            <label for="lastname" class="formbold-form-label">Canvas</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
                         </div>
                     </div>
-
                     <div class="formbold-input-flex">
                         <div>
-                            <label for="dob" class="formbold-form-label"> Date of Birth </label>
-                            <input type="date" name="dob" id="dob" class="formbold-form-input" />
+                            <label for="lastname" class="formbold-form-label">Wooden Panel</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
                         </div>
                         <div>
-                            <label for="email" class="formbold-form-label"> Email Address </label>
-                            <input type="email" name="email" placeholder="example@mail.com" id="email"
-                                class="formbold-form-input" />
+                            <label for="lastname" class="formbold-form-label">Tree wood</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
                         </div>
-                    </div>
-
-                    <div>
-                        <label for="address" class="formbold-form-label"> Address </label>
-                        <input type="text" name="address" id="address"
-                            placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY" class="formbold-form-input" />
                     </div>
                 </div>
 
                 <div class="formbold-form-step-2">
-                    <div>
-                        <label for="message" class="formbold-form-label"> Message </label>
-                        <textarea rows="6" name="message" id="message" placeholder="Type your message" class="formbold-form-input"></textarea>
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label">Frame</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lastname" class="formbold-form-label">Wooden Panel</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="lastname" class="formbold-form-label">Tree wood</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <div class="formbold-form-step-3">
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label">Frame</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lastname" class="formbold-form-label">Without frame</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step-4">
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label">Type text</label>
+                            <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input" />
+                        </div>
+                        <div>
+                            <label for="lastname" class="formbold-form-label">Text color</label>
+                            <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step-5">
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label">Type box</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">One</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lastname" class="formbold-form-label">Text color</label>
+                            <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step-6">
                     <div class="formbold-form-confirm">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
@@ -164,7 +245,7 @@
 
         .formbold-form-wrapper {
             margin: 0 auto;
-            max-width: 550px;
+            /* max-width: 550px; */
             width: 100%;
             background: white;
         }
@@ -298,13 +379,19 @@
 
         .formbold-form-step-1,
         .formbold-form-step-2,
-        .formbold-form-step-3 {
+        .formbold-form-step-3,
+        .formbold-form-step-4,
+        .formbold-form-step-5,
+        .formbold-form-step-6 {
             display: none;
         }
 
         .formbold-form-step-1.active,
         .formbold-form-step-2.active,
-        .formbold-form-step-3.active {
+        .formbold-form-step-3.active,
+        .formbold-form-step-4.active,
+        .formbold-form-step-5.active,
+        .formbold-form-step-6.active {
             display: block;
         }
 
@@ -353,51 +440,87 @@
         const stepMenuOne = document.querySelector('.formbold-step-menu1')
         const stepMenuTwo = document.querySelector('.formbold-step-menu2')
         const stepMenuThree = document.querySelector('.formbold-step-menu3')
+        const stepMenuFour = document.querySelector('.formbold-step-menu4')
+        const stepMenuFive = document.querySelector('.formbold-step-menu5')
+        const stepMenuSix = document.querySelector('.formbold-step-menu6')
 
         const stepOne = document.querySelector('.formbold-form-step-1')
         const stepTwo = document.querySelector('.formbold-form-step-2')
         const stepThree = document.querySelector('.formbold-form-step-3')
+        const stepFour = document.querySelector('.formbold-form-step-4')
+        const stepFive = document.querySelector('.formbold-form-step-5')
+        const stepSix = document.querySelector('.formbold-form-step-6')
 
         const formSubmitBtn = document.querySelector('.formbold-btn')
         const formBackBtn = document.querySelector('.formbold-back-btn')
+
+        formBackBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (stepMenuTwo.className == 'formbold-step-menu2 active') {
+                stepMenuOne.classList.add('active')
+                stepMenuTwo.classList.remove('active')
+                stepOne.classList.add('active')
+                stepTwo.classList.remove('active')
+                formBackBtn.classList.remove('active')
+            } else if (stepMenuThree.className == 'formbold-step-menu3 active') {
+                stepMenuTwo.classList.add('active')
+                stepMenuThree.classList.remove('active')
+                stepTwo.classList.add('active')
+                stepThree.classList.remove('active')
+            } else if (stepMenuFour.className == 'formbold-step-menu4 active') {
+                stepMenuThree.classList.add('active')
+                stepMenuFour.classList.remove('active')
+                stepThree.classList.add('active')
+                stepFour.classList.remove('active')
+            } else if (stepMenuFive.className == 'formbold-step-menu5 active') {
+                stepMenuFour.classList.add('active')
+                stepMenuFive.classList.remove('active')
+                stepFour.classList.add('active')
+                stepFive.classList.remove('active')
+            } else if (stepMenuSix.className == 'formbold-step-menu6 active') {
+                stepMenuFive.classList.add('active')
+                stepMenuSix.classList.remove('active')
+                stepFive.classList.add('active')
+                stepSix.classList.remove('active')
+            }
+        })
+
 
         formSubmitBtn.addEventListener("click", function(event) {
             event.preventDefault()
             if (stepMenuOne.className == 'formbold-step-menu1 active') {
                 event.preventDefault()
-
                 stepMenuOne.classList.remove('active')
                 stepMenuTwo.classList.add('active')
-
                 stepOne.classList.remove('active')
                 stepTwo.classList.add('active')
-
                 formBackBtn.classList.add('active')
-                formBackBtn.addEventListener("click", function(event) {
-                    event.preventDefault()
-
-                    stepMenuOne.classList.add('active')
-                    stepMenuTwo.classList.remove('active')
-
-                    stepOne.classList.add('active')
-                    stepTwo.classList.remove('active')
-
-                    formBackBtn.classList.remove('active')
-
-                })
-
             } else if (stepMenuTwo.className == 'formbold-step-menu2 active') {
                 event.preventDefault()
-
                 stepMenuTwo.classList.remove('active')
                 stepMenuThree.classList.add('active')
-
                 stepTwo.classList.remove('active')
                 stepThree.classList.add('active')
-
-                formBackBtn.classList.remove('active')
+            }else if (stepMenuThree.className == 'formbold-step-menu3 active') {
+                event.preventDefault()
+                stepMenuThree.classList.remove('active')
+                stepMenuFour.classList.add('active')
+                stepThree.classList.remove('active')
+                stepFour.classList.add('active')
+            }else if (stepMenuFour.className == 'formbold-step-menu4 active') {
+                event.preventDefault()
+                stepMenuFour.classList.remove('active')
+                stepMenuFive.classList.add('active')
+                stepFour.classList.remove('active')
+                stepFive.classList.add('active')
+            }else if (stepMenuFive.className == 'formbold-step-menu5 active') {
+                event.preventDefault()
+                stepMenuFive.classList.remove('active')
+                stepMenuSix.classList.add('active')
+                stepFive.classList.remove('active')
+                stepSix.classList.add('active')
                 formSubmitBtn.textContent = 'Submit'
-            } else if (stepMenuThree.className == 'formbold-step-menu3 active') {
+            } else if (stepMenuSix.className == 'formbold-step-menu6 active') {
                 document.querySelector('form').submit()
             }
         })
