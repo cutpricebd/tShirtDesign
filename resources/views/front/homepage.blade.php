@@ -9,6 +9,9 @@
 @endsection
 
 @section('master')
+
+
+
     <div class="formbold-main-wrapper">
         <div class="formbold-form-wrapper">
             <form action="https://formbold.com/s/FORM_ID" method="POST">
@@ -44,6 +47,76 @@
                 <div class="formbold-form-step-1 active">
                     <div class="formbold-input-flex">
                         <div>
+                            <label id="first_frame_title" for="firstname" class="formbold-form-label">Frame</label>
+                            <select name="" id="first_frame" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                                <option value="">select one</option>
+                                <option value="1_1">Frame One</option>
+                                <option value="1_2">Frame Two</option>
+                                <option value="1_3">Frame Three</option>
+                                <option value="1_4">Frame Four</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label id="first_canvas_title" for="lastname" class="formbold-form-label">Canvas</label>
+                            <select name="" id="first_canvas" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                                <option value="">select one</option>
+                                <option value="2_1">Canvas One</option>
+                                <option value="2_2">Canvas Two</option>
+                                <option value="2_3">Canvas Three</option>
+                                <option value="2_4">Canvas Four</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label id="first_wooden_panel_title" for="lastname" class="formbold-form-label">Wooden Panel</label>
+                            <select name="" id="first_wooden_panel" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                                <option value="">select one</option>
+                                <option value="3_1">Wooden Panel One</option>
+                                <option value="3_2">Wooden Panel Two</option>
+                                <option value="3_3">Wooden Panel Three</option>
+                                <option value="3_4">Wooden Panel Four</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label id="first_tree_wood_title" for="lastname" class="formbold-form-label">Tree wood</label>
+                            <select name="" id="first_tree_wood" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                                <option value="">select one</option>
+                                <option value="4_1">Tree wood One</option>
+                                <option value="4_2">Tree wood Two</option>
+                                <option value="4_3">Tree wood Three</option>
+                                <option value="4_4">Tree wood Four</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" id="step_one_value">
+                </div>
+
+                <div class="formbold-form-step-2">
+                    <h2 id="stepTwoTitle" class="formbold-form-label" style="text-align: center; font-size: 24px;">Frame</h2>
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label">Type</label>
+                            <select name="" id=""  class="formbold-form-input">
+                                <option value="">select one</option>
+                                <option value="1">CM</option>
+                                <option value="2">Inch</option>
+                                <option value="3">MM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="" class="formbold-form-label">W: </label>
+                            <input type="number" name="" placeholder="Width" id="" class="formbold-form-input" />
+                        </div>
+                        <div>
+                            <label for="" class="formbold-form-label">H: </label>
+                            <input type="number" name="" placeholder="Height" id="" class="formbold-form-input" />
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="formbold-input-flex">
+                        <div>
                             <label for="firstname" class="formbold-form-label">Frame</label>
                             <select name="" id=""  class="formbold-form-input">
                                 <option value="">select one</option>
@@ -52,9 +125,9 @@
                         </div>
                         <div>
                             <label for="lastname" class="formbold-form-label">Canvas</label>
-                            <select name="" id=""  class="formbold-form-input">
+                            <select name="" id="" class="formbold-form-input">
                                 <option value="">select one</option>
-                                <option value="1">One</option>
+                                <option value="1">Canvas One</option>
                             </select>
                         </div>
                     </div>
@@ -73,35 +146,7 @@
                                 <option value="1">One</option>
                             </select>
                         </div>
-                    </div>
-                </div>
-
-                <div class="formbold-form-step-2">
-                    <div class="formbold-input-flex">
-                        <div>
-                            <label for="firstname" class="formbold-form-label">Frame</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Wooden Panel</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="formbold-input-flex">
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Tree wood</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="formbold-form-step-3">
@@ -157,44 +202,6 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
                         </p>
-
-                        <div>
-                            <button class="formbold-confirm-btn active">
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC" />
-                                    <g clip-path="url(#clip0_1667_1314)">
-                                        <path
-                                            d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z"
-                                            fill="#536387" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1667_1314">
-                                            <rect width="14" height="14" fill="white" transform="translate(4 4)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                Yes! I want it.
-                            </button>
-
-                            <button class="formbold-confirm-btn">
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC" />
-                                    <g clip-path="url(#clip0_1667_1314)">
-                                        <path
-                                            d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z"
-                                            fill="#536387" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1667_1314">
-                                            <rect width="14" height="14" fill="white" transform="translate(4 4)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                No! I don’t want it.
-                            </button>
-                        </div>
                     </div>
                 </div>
 
@@ -222,6 +229,9 @@
                 </div>
             </form>
         </div>
+        <div class="formbold-form-preview">
+            <h3 class="formbold-form-preview-heading">Preview</h3>
+        </div>
     </div>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -238,19 +248,22 @@
 
         .formbold-main-wrapper {
             display: flex;
-            align-items: center;
+            /* align-items: center; */
             justify-content: center;
             padding: 48px;
+            width: 100%;
         }
 
         .formbold-form-wrapper {
             margin: 0 auto;
-            /* max-width: 550px; */
-            width: 100%;
-            background: white;
+            width: 80%;
+        }
+        .formbold-form-preview {
+            margin: 0 auto;
+            width: 20%;
         }
 
-        .formbold-steps {
+        .formbold-steps{
             padding-bottom: 18px;
             margin-bottom: 35px;
             border-bottom: 1px solid #DDE3EC;
@@ -274,6 +287,14 @@
             color: #536387;
         }
 
+        .formbold-form-preview-heading{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #07074D;
+            text-align: center;
+        }
+
         .formbold-steps li span {
             display: flex;
             align-items: center;
@@ -290,7 +311,6 @@
 
         .formbold-steps li.active {
             color: #07074D;
-            ;
         }
 
         .formbold-steps li.active span {
@@ -437,94 +457,104 @@
         }
     </style>
     <script>
-        const stepMenuOne = document.querySelector('.formbold-step-menu1')
-        const stepMenuTwo = document.querySelector('.formbold-step-menu2')
-        const stepMenuThree = document.querySelector('.formbold-step-menu3')
-        const stepMenuFour = document.querySelector('.formbold-step-menu4')
-        const stepMenuFive = document.querySelector('.formbold-step-menu5')
-        const stepMenuSix = document.querySelector('.formbold-step-menu6')
+        const stepMenus = [
+            document.querySelector('.formbold-step-menu1'),
+            document.querySelector('.formbold-step-menu2'),
+            document.querySelector('.formbold-step-menu3'),
+            document.querySelector('.formbold-step-menu4'),
+            document.querySelector('.formbold-step-menu5'),
+            document.querySelector('.formbold-step-menu6')
+        ];
 
-        const stepOne = document.querySelector('.formbold-form-step-1')
-        const stepTwo = document.querySelector('.formbold-form-step-2')
-        const stepThree = document.querySelector('.formbold-form-step-3')
-        const stepFour = document.querySelector('.formbold-form-step-4')
-        const stepFive = document.querySelector('.formbold-form-step-5')
-        const stepSix = document.querySelector('.formbold-form-step-6')
+        const steps = [
+            document.querySelector('.formbold-form-step-1'),
+            document.querySelector('.formbold-form-step-2'),
+            document.querySelector('.formbold-form-step-3'),
+            document.querySelector('.formbold-form-step-4'),
+            document.querySelector('.formbold-form-step-5'),
+            document.querySelector('.formbold-form-step-6')
+        ];
 
-        const formSubmitBtn = document.querySelector('.formbold-btn')
-        const next_btn = document.querySelector('#next_btn')
-        const formBackBtn = document.querySelector('.formbold-back-btn')
+        // Buttons
+        const formSubmitBtn = document.querySelector('.formbold-btn');
+        const nextBtn = document.querySelector('#next_btn');
+        const formBackBtn = document.querySelector('.formbold-back-btn');
 
+        // Current step tracker
+        let currentStep = 0;
+
+        // Helper function to update steps and menus
+        function updateSteps(stepIndex) {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === stepIndex);
+                stepMenus[index].classList.toggle('active', index === stepIndex);
+            });
+
+            // Update button states
+            formBackBtn.classList.toggle('active', stepIndex > 0);
+            nextBtn.textContent = stepIndex === steps.length - 1 ? 'Submit' : 'Next Step';
+        }
+
+        // Back button functionality
         formBackBtn.addEventListener("click", function(event) {
             event.preventDefault();
-            if (stepMenuTwo.className == 'formbold-step-menu2 active') {
-                stepMenuOne.classList.add('active')
-                stepMenuTwo.classList.remove('active')
-                stepOne.classList.add('active')
-                stepTwo.classList.remove('active')
-                formBackBtn.classList.remove('active')
-            } else if (stepMenuThree.className == 'formbold-step-menu3 active') {
-                stepMenuTwo.classList.add('active')
-                stepMenuThree.classList.remove('active')
-                stepTwo.classList.add('active')
-                stepThree.classList.remove('active')
-            } else if (stepMenuFour.className == 'formbold-step-menu4 active') {
-                stepMenuThree.classList.add('active')
-                stepMenuFour.classList.remove('active')
-                stepThree.classList.add('active')
-                stepFour.classList.remove('active')
-            } else if (stepMenuFive.className == 'formbold-step-menu5 active') {
-                stepMenuFour.classList.add('active')
-                stepMenuFive.classList.remove('active')
-                stepFour.classList.add('active')
-                stepFive.classList.remove('active')
-            } else if (stepMenuSix.className == 'formbold-step-menu6 active') {
-                stepMenuFive.classList.add('active')
-                stepMenuSix.classList.remove('active')
-                stepFive.classList.add('active')
-                stepSix.classList.remove('active')
-                next_btn.textContent = 'Next Step'
+            if (currentStep > 0) {
+                currentStep--;
+                updateSteps(currentStep);
             }
-        })
+        });
 
-
+        // Next/Submit button functionality
         formSubmitBtn.addEventListener("click", function(event) {
-            event.preventDefault()
-            if (stepMenuOne.className == 'formbold-step-menu1 active') {
-                event.preventDefault()
-                stepMenuOne.classList.remove('active')
-                stepMenuTwo.classList.add('active')
-                stepOne.classList.remove('active')
-                stepTwo.classList.add('active')
-                formBackBtn.classList.add('active')
-            } else if (stepMenuTwo.className == 'formbold-step-menu2 active') {
-                event.preventDefault()
-                stepMenuTwo.classList.remove('active')
-                stepMenuThree.classList.add('active')
-                stepTwo.classList.remove('active')
-                stepThree.classList.add('active')
-            }else if (stepMenuThree.className == 'formbold-step-menu3 active') {
-                event.preventDefault()
-                stepMenuThree.classList.remove('active')
-                stepMenuFour.classList.add('active')
-                stepThree.classList.remove('active')
-                stepFour.classList.add('active')
-            }else if (stepMenuFour.className == 'formbold-step-menu4 active') {
-                event.preventDefault()
-                stepMenuFour.classList.remove('active')
-                stepMenuFive.classList.add('active')
-                stepFour.classList.remove('active')
-                stepFive.classList.add('active')
-            }else if (stepMenuFive.className == 'formbold-step-menu5 active') {
-                event.preventDefault()
-                stepMenuFive.classList.remove('active')
-                stepMenuSix.classList.add('active')
-                stepFive.classList.remove('active')
-                stepSix.classList.add('active')
-                next_btn.textContent = 'Submit'
-            } else if (stepMenuSix.className == 'formbold-step-menu6 active') {
-                document.querySelector('form').submit()
+            event.preventDefault();
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                if(currentStep == 1){
+                    var step_one_data = $("#step_one_value").val();
+                    if(step_one_data ==""){
+                        alert("data need from step one");
+                        return false;
+                    }
+                }
+                updateSteps(currentStep);
+            } else {
+                document.querySelector('form').submit();
             }
-        })
+        });
+
+        // Initialize the form
+        updateSteps(currentStep);
+
+        function firstStepSelectChange(id){
+            if(id == "first_frame"){
+                $("#first_canvas").val("");
+                $("#first_wooden_panel").val("");
+                $("#first_tree_wood").val("");
+            }else if(id == "first_canvas"){
+                $("#first_frame").val("");
+                $("#first_wooden_panel").val("");
+                $("#first_tree_wood").val("");
+            }else if(id == "first_wooden_panel"){
+                $("#first_canvas").val("");
+                $("#first_frame").val("");
+                $("#first_tree_wood").val("");
+            }else if(id == "first_tree_wood"){
+                $("#first_canvas").val("");
+                $("#first_wooden_panel").val("");
+                $("#first_frame").val("");
+            }else{
+                $("#first_canvas").val("");
+                $("#first_wooden_panel").val("");
+                $("#first_tree_wood").val("");
+                $("#first_frame").val("");
+            }
+            var step_one_val = $("#"+id).val();
+            $("#step_one_value").val($("#"+id).val());
+            $("#stepTwoTitle").html($("#"+id+"_title").html());
+
+        }
     </script>
+
+
+
 @endsection
