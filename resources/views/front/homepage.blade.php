@@ -1,8 +1,8 @@
 @extends('front.layouts.master')
 
-@section('head')
-    @include('meta::manager', [
-        'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? env('APP_NAME')),
+    @section('head')
+        @include('meta::manager', [
+            'title' => ($settings_g['title'] ?? env('APP_NAME')) . ' - ' . ($settings_g['slogan'] ?? env('APP_NAME')),
         'description' => $settings_g['meta_description'] ?? '',
         'keywords' => $settings_g['keywords'] ?? '',
     ])
@@ -508,14 +508,14 @@
         formSubmitBtn.addEventListener("click", function(event) {
             event.preventDefault();
             if (currentStep < steps.length - 1) {
-                currentStep++;
-                if(currentStep == 1){
+                if(currentStep == 0){
                     var step_one_data = $("#step_one_value").val();
                     if(step_one_data ==""){
                         alert("data need from step one");
                         return false;
                     }
                 }
+                currentStep++;
                 updateSteps(currentStep);
             } else {
                 document.querySelector('form').submit();
