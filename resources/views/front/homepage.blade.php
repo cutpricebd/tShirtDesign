@@ -97,7 +97,7 @@
                     <div class="formbold-input-flex">
                         <div>
                             <label for="firstname" class="formbold-form-label">Type</label>
-                            <select name="" id=""  class="formbold-form-input">
+                            <select name="" id="step_two_type"  class="formbold-form-input">
                                 <option value="">select one</option>
                                 <option value="1">CM</option>
                                 <option value="2">Inch</option>
@@ -106,50 +106,16 @@
                         </div>
                         <div>
                             <label for="" class="formbold-form-label">W: </label>
-                            <input type="number" name="" placeholder="Width" id="" class="formbold-form-input" />
+                            <input type="number" name="" placeholder="Width" id="step_two_w" class="formbold-form-input" />
                         </div>
                         <div>
                             <label for="" class="formbold-form-label">H: </label>
-                            <input type="number" name="" placeholder="Height" id="" class="formbold-form-input" />
+                            <input type="number" name="" placeholder="Height" id="step_two_h" class="formbold-form-input" />
                         </div>
                     </div>
-
-
-                    <!-- <div class="formbold-input-flex">
-                        <div>
-                            <label for="firstname" class="formbold-form-label">Frame</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Canvas</label>
-                            <select name="" id="" class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">Canvas One</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="formbold-input-flex">
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Wooden Panel</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Tree wood</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                    </div> -->
                 </div>
 
-                <div class="formbold-form-step-3">
+                <!-- <div class="formbold-form-step-3">
                     <div class="formbold-input-flex">
                         <div>
                             <label for="firstname" class="formbold-form-label">Frame</label>
@@ -165,6 +131,29 @@
                                 <option value="1">One</option>
                             </select>
                         </div>
+                    </div>
+                </div> -->
+                <div class="formbold-form-step-3">
+                    <div class="formbold-input-flex">
+                        <div>
+                            <!-- Radio Button for Frame -->
+                            <input type="radio" id="stepThreeFrameOption" name="stepThreeFrameSelection" value="frame" style="float: left;margin-top: 5px;margin-right: 5px;">
+                            <label for="frameOption" class="formbold-form-label">Frame</label>
+
+                            <!-- Radio Button for Without Frame -->
+                            <input type="radio" id="stepThreeNoFrameOption" name="stepThreeFrameSelection" checked="checked" value="noFrame" style="float: left;margin-top: 5px;margin-right: 5px;">
+                            <label for="noFrameOption" class="formbold-form-label">Without Frame</label>
+                        </div>
+                    </div>
+                    <div id="stepThreeFrameSelect" class="hidden">
+                        <label for="frameSelectField" class="formbold-form-label">Select Frame</label>
+                        <select id="frameSelectField" class="formbold-form-input">
+                            <option value="">Select one</option>
+                            <option value="4_1">Frame One</option>
+                            <option value="4_2">Frame Two</option>
+                            <option value="4_3">Frame Three</option>
+                            <option value="4_4">Frame Four</option>
+                        </select>
                     </div>
                 </div>
 
@@ -233,6 +222,7 @@
             <h3 class="formbold-form-preview-heading">Preview</h3>
         </div>
     </div>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -244,6 +234,10 @@
 
         body {
             font-family: "Inter", sans-serif;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .formbold-main-wrapper {
@@ -456,6 +450,9 @@
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
         }
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script>
         const stepMenus = [
             document.querySelector('.formbold-step-menu1'),
@@ -508,11 +505,36 @@
         formSubmitBtn.addEventListener("click", function(event) {
             event.preventDefault();
             if (currentStep < steps.length - 1) {
+                // step one
                 if(currentStep == 0){
                     var step_one_data = $("#step_one_value").val();
                     if(step_one_data ==""){
                         alert("data need from step one");
                         return false;
+                    }
+                }
+                // step two
+                if(currentStep == 1){
+                    var step_two_type = $("#step_two_type").val();
+                    var step_two_w = $("#step_two_w").val();
+                    var step_two_h = $("#step_two_h").val();
+                    if(step_two_type == "" || step_two_w == "" || step_two_h == ""){
+                        alert("data need from step two");
+                        return false;
+                    }
+                }
+                // step three
+                if(currentStep == 2){
+                    var stepThreeFrameSelection = $('input[name="stepThreeFrameSelection"]:checked').val();
+                    var stepThreeFrameSelect = $("#stepThreeFrameSelect option:selected").val();
+                    if(stepThreeFrameSelection == ""){
+                        alert("data need from step three1");
+                        return false;
+                    }else if(stepThreeFrameSelection == "frame"){
+                        if(stepThreeFrameSelect == ""){
+                            alert("data need from step three1");
+                            return false;
+                        }
                     }
                 }
                 currentStep++;
@@ -551,8 +573,19 @@
             var step_one_val = $("#"+id).val();
             $("#step_one_value").val($("#"+id).val());
             $("#stepTwoTitle").html($("#"+id+"_title").html());
-
         }
+        $(document).ready(function() {
+            // Event listener for radio buttons
+            $('input[name="stepThreeFrameSelection"]').on('change', function () {
+                console.log($(this).val());
+                if ($(this).val() === 'frame') {
+                    $('#stepThreeFrameSelect').removeClass('hidden'); // Show frame select field
+                } else {
+                    $('#stepThreeFrameSelect').addClass('hidden'); // Hide frame select field
+                }
+            });
+        });
+
     </script>
 
 
