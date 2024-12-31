@@ -115,24 +115,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="formbold-form-step-3">
-                    <div class="formbold-input-flex">
-                        <div>
-                            <label for="firstname" class="formbold-form-label">Frame</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="lastname" class="formbold-form-label">Without frame</label>
-                            <select name="" id=""  class="formbold-form-input">
-                                <option value="">select one</option>
-                                <option value="1">One</option>
-                            </select>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="formbold-form-step-3">
                     <div class="formbold-input-flex">
                         <div>
@@ -161,11 +143,11 @@
                     <div class="formbold-input-flex">
                         <div>
                             <label for="firstname" class="formbold-form-label">Type text</label>
-                            <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input" />
+                            <input type="text" name="firstname" placeholder="Type Your text" id="step_four_text" class="formbold-form-input" />
                         </div>
                         <div>
                             <label for="lastname" class="formbold-form-label">Text color</label>
-                            <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input" />
+                            <input type="text" value="#000000" id="step_four_color" class="formbold-form-input" data-coloris>
                         </div>
                     </div>
                 </div>
@@ -451,8 +433,19 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/j query-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
 
+
+
+
+
+
+
+@endsection
+
+
+
+@section('footer')
     <script>
         const stepMenus = [
             document.querySelector('.formbold-step-menu1'),
@@ -528,13 +521,22 @@
                     var stepThreeFrameSelection = $('input[name="stepThreeFrameSelection"]:checked').val();
                     var stepThreeFrameSelect = $("#stepThreeFrameSelect option:selected").val();
                     if(stepThreeFrameSelection == ""){
-                        alert("data need from step three1");
+                        alert("data need from step three");
                         return false;
                     }else if(stepThreeFrameSelection == "frame"){
                         if(stepThreeFrameSelect == ""){
-                            alert("data need from step three1");
+                            alert("data need from step three");
                             return false;
                         }
+                    }
+                }
+                // step four
+                if(currentStep == 3){
+                    var stepFourText = $("#step_four_text").val();
+                    var stepFourColor = $("#step_four_color").val();
+                    if(stepFourText == "" || stepFourColor == ""){
+                        alert("data need from step Four");
+                        return false;
                     }
                 }
                 currentStep++;
@@ -547,7 +549,7 @@
         // Initialize the form
         updateSteps(currentStep);
 
-        function firstStepSelectChange(id){
+        function firstStepSelectChange(id) {
             if(id == "first_frame"){
                 $("#first_canvas").val("");
                 $("#first_wooden_panel").val("");
@@ -574,6 +576,7 @@
             $("#step_one_value").val($("#"+id).val());
             $("#stepTwoTitle").html($("#"+id+"_title").html());
         }
+
         $(document).ready(function() {
             // Event listener for radio buttons
             $('input[name="stepThreeFrameSelection"]').on('change', function () {
@@ -588,6 +591,12 @@
 
     </script>
 
-
+    <script>
+        Coloris({
+            themeMode: 'dark',
+            alpha: false,
+            defaultColor: '#000000',
+        });
+    </script>
 
 @endsection
