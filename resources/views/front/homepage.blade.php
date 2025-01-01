@@ -10,8 +10,6 @@
 
 @section('master')
 
-
-
     <div class="formbold-main-wrapper">
         <div class="formbold-form-wrapper">
             <form action="https://formbold.com/s/FORM_ID" method="POST">
@@ -48,7 +46,7 @@
                     <div class="formbold-input-flex">
                         <div>
                             <label id="first_frame_title" for="firstname" class="formbold-form-label">Frame</label>
-                            <select name="" id="first_frame" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                            <select name="" id="first_frame" class="formbold-form-input" onchange="firstStepSelectChange(this.id,this)">
                                 <option value="">select one</option>
                                 <option value="1_1">Frame One</option>
                                 <option value="1_2">Frame Two</option>
@@ -70,7 +68,7 @@
                     <div class="formbold-input-flex">
                         <div>
                             <label id="first_wooden_panel_title" for="lastname" class="formbold-form-label">Wooden Panel</label>
-                            <select name="" id="first_wooden_panel" class="formbold-form-input" onchange="firstStepSelectChange(this.id)">
+                            <select name="" id="first_wooden_panel" class="formbold-form-input" onchange="firstStepSelectChange(this.id, this)">
                                 <option value="">select one</option>
                                 <option value="3_1">Wooden Panel One</option>
                                 <option value="3_2">Wooden Panel Two</option>
@@ -202,6 +200,15 @@
         </div>
         <div class="formbold-form-preview">
             <h3 class="formbold-form-preview-heading">Preview</h3>
+
+            <div style="width: 100%; position: relative">
+                <div id="step_one_preview" style="width: 100%; position: absolute"></div>
+                <div id="step_two_preview" style="width: 100%; position: absolute; top: 40px ; left: 50px"></div>
+                <div id="step_three_preview" style="width: 100%; position: absolute"></div>
+                <div id="step_four_preview"></div>
+                <div id="step_five_preview"></div>
+                <div id="step_six_preview"></div>
+            </div>
         </div>
     </div>
 
@@ -435,18 +442,22 @@
 
     {{-- <script src="https://code.jquery.com/j query-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
 
-
-
-
-
-
-
 @endsection
 
 
 
 @section('footer')
     <script>
+
+        let artWork = {
+            title: "Artwork",
+            frame: null,
+            woodenPanel : null,
+            canvas: null,
+            treeWood: null
+        }
+
+
         const stepMenus = [
             document.querySelector('.formbold-step-menu1'),
             document.querySelector('.formbold-step-menu2'),
@@ -549,16 +560,30 @@
         // Initialize the form
         updateSteps(currentStep);
 
-        function firstStepSelectChange(id) {
+        function firstStepSelectChange(id,data=null) {
+
+            console.log("id",id);
+
             if(id == "first_frame"){
+
+                artWork.frame = data.value;
+                $("#step_one_preview").html(`<img src="/artworks/frames/frame-${artWork.frame}.png" />`);
+
                 $("#first_canvas").val("");
                 $("#first_wooden_panel").val("");
                 $("#first_tree_wood").val("");
             }else if(id == "first_canvas"){
+
+
+
                 $("#first_frame").val("");
                 $("#first_wooden_panel").val("");
                 $("#first_tree_wood").val("");
             }else if(id == "first_wooden_panel"){
+
+                artWork.woodenPanel = data.value;
+                $("#step_two_preview").html(`<img src="/artworks/woodern-panels/panel-${artWork.woodenPanel}.png" width="60%" />`);
+
                 $("#first_canvas").val("");
                 $("#first_frame").val("");
                 $("#first_tree_wood").val("");
@@ -576,6 +601,11 @@
             $("#step_one_value").val($("#"+id).val());
             $("#stepTwoTitle").html($("#"+id+"_title").html());
         }
+
+        // function secondStepSelectChange(id,data=null) {
+        //     artWork.woodenPanel = data.value;
+        //     $("#step_two_preview").html(`<img src="/artworks/frames/frame-${artWork.frame}.png" />`);
+        // }
 
         $(document).ready(function() {
             // Event listener for radio buttons
